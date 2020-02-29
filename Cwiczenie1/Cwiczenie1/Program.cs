@@ -9,8 +9,9 @@ namespace Cwiczenie1
     {
         public static async Task Main(string[] args)
         {
+            var url = args.Length > 0 ? args[0] : "https://www.pja.edu.pl";
             var client = new HttpClient();
-            var response = await client.GetAsync("https://www.pja.edu.pl");
+            var response = await client.GetAsync(url);
 
             if (response.IsSuccessStatusCode)
             {
